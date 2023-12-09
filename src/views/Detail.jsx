@@ -9,7 +9,8 @@ import {
 } from "antd-mobile-icons";
 import { Badge } from "antd-mobile";
 
-const Detail = function Detail() {
+const Detail = function Detail(props) {
+  let { navigate } = props;
   return (
     <div className="detail-box">
       {/* 新闻内容 */}
@@ -17,7 +18,12 @@ const Detail = function Detail() {
 
       {/* 底部图片 */}
       <div className="tab-bar">
-        <div className="back">
+        <div
+          className="back"
+          onClick={() => {
+            navigate(-1);
+          }}
+        >
           <LeftOutline />
         </div>
         <div className="icons">
@@ -27,7 +33,7 @@ const Detail = function Detail() {
           <Badge content="29">
             <LikeOutline />
           </Badge>
-          <span>
+          <span className="stored">
             <StarOutline />
           </span>
           <span>
